@@ -8,6 +8,7 @@ defmodule AdminDemo.ExAdmin.Post do
 
       column :name
       column :body
+      column :published
       column :tags, fn(post) -> 
         if post.tags, do: Enum.reduce(post.tags, "",&(&2 <> " " <> &1.name))
       end
@@ -17,6 +18,7 @@ defmodule AdminDemo.ExAdmin.Post do
       inputs do
         input post, :name
         input post, :body
+        input post, :published
       end
 
       inputs "Tags" do
@@ -28,6 +30,7 @@ defmodule AdminDemo.ExAdmin.Post do
       attributes_table do
         row :name
         row :body
+        row :published
       end
       panel "Tags" do
         table_for post.tags do

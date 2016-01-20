@@ -20,6 +20,8 @@ defmodule AdminDemo.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    
+    resources "/comments", CommentController
   end
 
   # Other scopes may use custom stacks.

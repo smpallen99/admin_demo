@@ -1,18 +1,16 @@
-defmodule AdminDemo.Post do
+defmodule AdminDemo.Comment do
   use AdminDemo.Web, :model
 
-  schema "posts" do
-    field :name, :string
+  schema "comments" do
     field :body, :string
-    field :published, :boolean
-
-    has_many :posts_tags, AdminDemo.PostTag
-    has_many :tags, through: [:posts_tags, :tag]
+    field :approved, :boolean, default: false
+    field :show_at, Ecto.DateTime
+    belongs_to :posts, AdminDemo.Posts
 
     timestamps
   end
 
-  @required_fields ~w(name body published)
+  @required_fields ~w(body approved show_at)
   @optional_fields ~w()
 
   @doc """

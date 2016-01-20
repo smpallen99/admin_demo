@@ -1,0 +1,28 @@
+<h2>Show comment</h2>
+
+<ul>
+
+  <li>
+    <strong>Body:</strong>
+    <%= @comment.body %>
+  </li>
+
+  <li>
+    <strong>Approved:</strong>
+    <%= @comment.approved %>
+  </li>
+
+  <li>
+    <strong>Show at:</strong>
+    <%= @comment.show_at %>
+  </li>
+
+  <li>
+    <strong>Posts:</strong>
+    <%= @comment.posts_id %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: comment_path(@conn, :edit, @comment) %>
+<%= link "Back", to: comment_path(@conn, :index) %>

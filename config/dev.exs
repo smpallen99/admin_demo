@@ -36,7 +36,7 @@ config :phoenix, :stacktrace_depth, 20
 config :admin_demo, AdminDemo.Repo,
   adapter: Ecto.Adapters.MySQL,
   username: "root",
-  password: "*******",
+  password: "Gt5de3aq1",
   database: "admin_demo_dev",
   hostname: "localhost",
   pool_size: 10
