@@ -25,7 +25,8 @@ config :ex_admin,
   modules: [
     AdminDemo.ExAdmin.Dashboard,
     AdminDemo.ExAdmin.Post,
-    AdminDemo.ExAdmin.Tag
+    AdminDemo.ExAdmin.Tag,
+    AdminDemo.ExAdmin.Comment 
   ]
 
 # Configure phoenix generators

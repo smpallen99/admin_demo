@@ -19,7 +19,7 @@
 
   <li>
     <strong>Posts:</strong>
-    <%= @comment.posts_id %>
+    <%= @comment.post_id %>
   </li>
 
 </ul>

@@ -17,7 +17,8 @@ defmodule AdminDemo.CommentController do
 
   def create(conn, %{"comment" => comment_params}) do
     changeset = Comment.changeset(%Comment{}, comment_params)
-
+require Logger
+Logger.warn "comment_params: #{inspect comment_params}, changeset: #{inspect changeset}"
     case Repo.insert(changeset) do
       {:ok, _comment} ->
         conn

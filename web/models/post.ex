@@ -4,9 +4,10 @@ defmodule AdminDemo.Post do
   schema "posts" do
     field :name, :string
     field :body, :string
-    field :published, :boolean
+    field :published, :boolean # , default: false
 
     has_many :posts_tags, AdminDemo.PostTag
+    has_many :comments, AdminDemo.Comment
     has_many :tags, through: [:posts_tags, :tag]
 
     timestamps
@@ -25,4 +26,6 @@ defmodule AdminDemo.Post do
     model
     |> cast(params, @required_fields, @optional_fields)
   end
+
+  def all, do: AdminDemo.Repo.all(__MODULE__)
 end

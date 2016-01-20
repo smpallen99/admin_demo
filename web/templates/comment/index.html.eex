@@ -17,7 +17,7 @@
       <td><%= comment.body %></td>
       <td><%= comment.approved %></td>
       <td><%= comment.show_at %></td>
-      <td><%= comment.posts_id %></td>
+      <td><%= comment.post_id %></td>
 
       <td class="text-right">
         <%= link "Show", to: comment_path(@conn, :show, comment), class: "btn btn-default btn-xs" %>
