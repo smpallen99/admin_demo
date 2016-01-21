@@ -7,12 +7,14 @@ defmodule AdminDemo.ExAdmin.Comment do
 
       column :body
       column :approved
+      column :show_at
     end
 
     form comment do
       inputs do
         input comment, :body
         input comment, :approved
+        input comment, :show_at, options: [sec: []]
         input comment, :post, collection: AdminDemo.Post.all
       end
     end
@@ -21,6 +23,7 @@ defmodule AdminDemo.ExAdmin.Comment do
       attributes_table do
         row :body
         row :approved
+        row :show_at
       end
     end
 
