@@ -1,0 +1,36 @@
+<h2>Listing fields</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>String field</th>
+      <th>Uuid field</th>
+      <th>Datetime field</th>
+      <th>Date field</th>
+      <th>Time field</th>
+      <th>Text field</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for field <- @fields do %>
+    <tr>
+      <td><%= field.string_field %></td>
+      <td><%= field.uuid_field %></td>
+      <td><%= field.datetime_field %></td>
+      <td><%= field.date_field %></td>
+      <td><%= field.time_field %></td>
+      <td><%= field.text_field %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: field_path(@conn, :show, field), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: field_path(@conn, :edit, field), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: field_path(@conn, :delete, field), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New field", to: field_path(@conn, :new) %>

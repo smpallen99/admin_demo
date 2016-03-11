@@ -26,7 +26,8 @@ config :ex_admin,
     AdminDemo.ExAdmin.Dashboard,
     AdminDemo.ExAdmin.Post,
     AdminDemo.ExAdmin.Tag,
-    AdminDemo.ExAdmin.Comment 
+    AdminDemo.ExAdmin.Comment,
+    AdminDemo.ExAdmin.Field
   ]
 
 # Configure phoenix generators
@@ -34,10 +35,10 @@ config :phoenix, :generators,
   migration: true,
   binary_id: false
 
-config :xain, :quote, "'"
-config :xain, :after_callback, &Phoenix.HTML.raw/1
-
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
+
+config :xain, :quote, "'"
+config :xain, :after_callback, {Phoenix.HTML, :raw}
 

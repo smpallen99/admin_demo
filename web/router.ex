@@ -22,6 +22,7 @@ defmodule AdminDemo.Router do
     get "/", PageController, :index
     
     resources "/comments", CommentController
+    resources "/fields", FieldController
   end
 
   # Other scopes may use custom stacks.

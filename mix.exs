@@ -31,13 +31,15 @@ defmodule AdminDemo.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [{:phoenix, "~> 1.1.2"},
+     {:ecto, "~> 1.1.4", override: true},
      {:phoenix_ecto, "~> 2.0"},
-     {:mariaex, ">= 0.4.1"},
+     {:mariaex, ">= 0.7.0", override: true},
      {:phoenix_html, "~> 2.3"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.9"},
-     {:ex_admin, path: "../../ex_admin"},
-     # {:ex_admin, github: "smpallen99/ex_admin"},
+     # {:ex_queb, path: "../../ex_queb", override: true},
+     {:ex_admin, github: "smpallen99/ex_admin"},
+     # {:ex_admin, path: "../../ex_admin"},
      {:cowboy, "~> 1.0"}]
   end
 

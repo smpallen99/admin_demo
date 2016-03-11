@@ -1,0 +1,38 @@
+<h2>Show field</h2>
+
+<ul>
+
+  <li>
+    <strong>String field:</strong>
+    <%= @field.string_field %>
+  </li>
+
+  <li>
+    <strong>Uuid field:</strong>
+    <%= @field.uuid_field %>
+  </li>
+
+  <li>
+    <strong>Datetime field:</strong>
+    <%= @field.datetime_field %>
+  </li>
+
+  <li>
+    <strong>Date field:</strong>
+    <%= @field.date_field %>
+  </li>
+
+  <li>
+    <strong>Time field:</strong>
+    <%= @field.time_field %>
+  </li>
+
+  <li>
+    <strong>Text field:</strong>
+    <%= @field.text_field %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: field_path(@conn, :edit, @field) %>
+<%= link "Back", to: field_path(@conn, :index) %>
